@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keszi Bálint — Vágó</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card img { transition: transform 0.3s ease; }
+    .card:hover img { transform: scale(1.03); }
+    .card-play { opacity: 0; transform: translateY(4px); transition: opacity 0.2s ease, transform 0.2s ease; }
+    .card:hover .card-play { opacity: 1; transform: translateY(0); }
+
+    #lightbox { display: none; }
+    #lightbox.open { display: grid; animation: lb-fade 0.15s ease; }
+    #lightbox-box { animation: lb-scale 0.2s ease; }
+    @keyframes lb-fade  { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes lb-scale { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+  </style>
+</head>
+<body class="bg-[#0d0d0d] text-white min-h-screen selection:bg-white/20">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-neutral-950/70 border-b border-white/10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center">
+        <a href="#top" class="text-xl sm:text-2xl font-extrabold tracking-tight text-white/80">
+          KESZI BÁLINT — VÁGÓ
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- RÓLAM -->
+  <section id="rolam" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mt-4 flex flex-col md:flex-row gap-8">
+      <div class="flex-1 grid md:grid-cols-3 gap-6">
+        <div class="md:col-span-2">
+          <p class="text-justify tracking-wide text-[#b3b3b3] text-base">
+            Amikor fiatal voltam, elhatároztam, hogy bármit is fogok csinálni az életben, abban mindenképp lesz egy számítógép előttem. Digitális „kockaként", eredetileg a felvidéki Naszvadról származom, és mindig is szenvedélyesen érdekelt a történetmesélés. Az elmúlt tíz évben a Hang-Szín-Tér Művészeti Szakgimnáziumban leérettségiztem és elvégeztem az OKJ-t, majd vágó diplomát szereztem az EKKE-n. Az életem része volt mindig is valami új megalkotása kezdve a 3D modellezéstől a digitális rajzoláson át a vágásig. Számomra a történet mindig az adott vágás legfontosabb eleme, és gondoskodom róla, hogy az a lehető leghatékonyabban legyen elmesélve, legyen szó kisjátékfilmről, magazinműsorról vagy akár aftermovie-ról.
+          </p>
+        </div>
+        <div class="md:text-right">
+          <h3 class="uppercase tracking-wide text-sm font-semibold text-white/90 mb-5">KÉPESSÉGEIM</h3>
+          <ul class="space-y-1 text-white/70 text-sm">
+            <li>DaVinci Resolve</li>
+            <li>Premiere Pro</li>
+            <li>Photoshop</li>
+            <li>After Effects</li>
+            <li>Illustrator</li>
+            <li>Media Composer</li>
+            <li>Pro Tools</li>
+            <li>Blender</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex-shrink-0 w-full md:w-52">
+        <div class="w-full rounded-2xl border border-white/10 bg-[#1a1a1a] overflow-hidden flex items-center justify-center" style="aspect-ratio:3/4">
+          <img
+            id="profile-img"
+            alt="Keszi Bálint"
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none';document.getElementById('profile-placeholder').style.display='flex';"
+          />
+          <span id="profile-placeholder" class="flex-col items-center gap-2 text-white/20 text-xs select-none" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+            </svg>
+            Google Drive link
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUNKÁIM -->
+  <section id="work" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-6">
+    <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+    <h2 class="text-xl text-[#f2f2f2] sm:text-2xl p-8 px-1 pb-4 font-semibold">Elérhetőségek</h2>
+    <div class="mt-1 grid gap-3">
+      <a href="https://www.youtube.com/@keszo1228/videos" target="_blank" rel="noreferrer" class="inline-flex w-fit items-center border border-white/10 rounded-2xl px-4 py-2 text-sm text-[#c3c3c3] bg-[#1a1a1a] hover:bg-[#262626] hover:text-[#e6e6e6]">YouTube</a>
+      <a href="https://www.instagram.com/keszo1228/" target="_blank" rel="noreferrer" class="inline-flex w-fit items-center border border-white/10 rounded-2xl px-4 py-2 text-sm text-[#c3c3c3] bg-[#1a1a1a] hover:bg-[#262626] hover:text-[#e6e6e6]">Instagram</a>
+      <a href="mailto:balint.keszi2001@gmail.com" class="inline-flex w-fit items-center border border-white/10 rounded-2xl px-4 py-2 text-sm text-[#c3c3c3] bg-[#1a1a1a] hover:bg-[#262626] hover:text-[#e6e6e6]">balint.keszi2001@gmail.com</a>
+    </div>
+    <p class="mt-14 text-xs text-white/50">© <span id="year"></span> Keszi Bálint. Minden jog fenntartva.</p>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="fixed inset-0 z-50 place-items-center bg-black/80 p-4" onclick="closeLightbox(event)">
+    <div id="lightbox-box" class="w-full max-w-5xl overflow-hidden rounded-2xl bg-neutral-950 shadow-2xl" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between border-b border-white/10 p-3 sm:p-4">
+        <div>
+          <p id="lb-client" class="text-xs uppercase tracking-wider text-white/60"></p>
+          <h4 id="lb-title" class="text-white font-semibold"></h4>
+        </div>
+        <button onclick="closeLightbox()" class="p-2 rounded-xl hover:bg-white/5" aria-label="Close video">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="aspect-video w-full bg-black">
+        <iframe id="lb-iframe" class="h-full w-full" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const PROFILE_PHOTO = "https://drive.google.com/file/d/12yfU9DA3UzzG_DX-qthO4hmTGrBGK5Kd/view?usp=drive_link";
+
+    const PROJECTS = [
+      { title: "KLLHATATLANOK",      client: "DIPLOMAFILM",    thumb: "https://drive.google.com/file/d/1dQlA7hKkmgFbrQ44x3EgF78jazGf28D9/view?usp=drive_link", url: "https://youtube.com/embed/YlGhxHNyvow" },
+      { title: "KONOK",              client: "PARAFRÁZIS",     thumb: "https://drive.google.com/file/d/1exuk-i6XwLBvnFt3Z5060rmwIRqvrwHJ/view?usp=drive_link", url: "https://youtube.com/embed/zSyP7uzEblU" },
+      { title: "MASQUERADE",         client: "PARAFRÁZIS",     thumb: "https://drive.google.com/file/d/1O2QAGakMx--nfysFAqhI7chhSqLi380T/view?usp=drive_link", url: "https://youtube.com/embed/DP7yiBvzgVQ" },
+      { title: "KÉSZ VAGY?",         client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1FZI3ODdi7PORrEU4jDXF1OOamrysQSF_/view?usp=sharing",    url: "https://youtube.com/embed/NlcxL9DuERc" },
+      { title: "VACAK",              client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1tsuaAAjoaWADaD_7I8-ZLZHVQWzkkEZa/view?usp=drive_link", url: "https://youtube.com/embed/3CorjAbkflA" },
+      { title: "VÉRFOLT",            client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/15hcXzp2MS96m_fBfDQjROd-pIJJbo6ed/view?usp=sharing",    url: "https://youtube.com/embed/X07NPJVMKPs" },
+      { title: "EKKEdd Magazinműsor",client: "MAGAZINMŰSOR",   thumb: "https://drive.google.com/file/d/1shfTe9GCouDuKGmV4BX_JLx-FkeYL3FF/view?usp=drive_link", url: "https://youtube.com/embed/Z5RbFzSeAOY" },
+      { title: "KOLLÉGISTÁK",        client: "DOKUMENTUMFILM", thumb: "https://drive.google.com/file/d/1v4P6yjk-B3C92OjXgK7cPXuFgzDvB9y_/view?usp=drive_link", url: "https://youtube.com/embed/1LuJPNSZw4s" },
+      { title: "KOLESZOSOK",         client: "DOKUMENTUMFILM", thumb: "https://drive.google.com/file/d/1wWvnsDvLSdvwFIBJnil5l3V4ZZn3hWkQ/view?usp=drive_link", url: "https://youtube.com/embed/MIMLuKDU6Rs" },
+      { title: "ÚJRA ITT",           client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1BQVXYPrGsXlMVLoqENCasY5JFE4y6vae/view?usp=drive_link", url: "https://youtube.com/embed/bSnk1kAsLmo" },
+      { title: "EMBERI JÁTSZMÁK",    client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1tXop-H0WBVVICFlVlg0i1cBEFuvx3Lu9/view?usp=drive_link", url: "https://youtube.com/embed/g51wklXed-8" },
+      { title: "PORTRÉ",             client: "DOKUMENTUMFILM", thumb: "https://drive.google.com/file/d/13xrQcu6bNeuiQxiJs3mQwSkNeKQMGhZp/view?usp=drive_link", url: "https://youtube.com/embed/Je-03rt-cUA" },
+    ];
+
+    function driveThumb(url) {
+      if (!url) return null;
+      const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w800` : url;
+    }
+
+    // Set profile photo
+    const profileSrc = driveThumb(PROFILE_PHOTO);
+    if (profileSrc) {
+      document.getElementById("profile-img").src = profileSrc;
+    } else {
+      document.getElementById("profile-img").style.display = "none";
+      document.getElementById("profile-placeholder").style.display = "flex";
+    }
+
+    // Set copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Render project cards
+    const grid = document.getElementById("grid");
+    const PLAY_ICON = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-white"><path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd"/></svg>`;
+
+    PROJECTS.forEach((p, i) => {
+      const thumb = driveThumb(p.thumb);
+      const card = document.createElement("button");
+      card.className = "card group relative w-full overflow-hidden rounded-2xl bg-neutral-900 shadow hover:shadow-lg text-left";
+      card.setAttribute("aria-label", `Open ${p.title}`);
+      card.onclick = () => openLightbox(p);
+      card.innerHTML = `
+        ${thumb
+          ? `<img src="${thumb}" alt="${p.title}" loading="lazy" class="h-48 sm:h-56 md:h-52 w-full object-cover" />`
+          : `<div class="h-48 sm:h-56 md:h-52 w-full bg-neutral-800 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-12 h-12 text-white/40"><path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd"/></svg></div>`
+        }
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent opacity-80"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 flex items-end justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-wider text-white/80">${p.client}</p>
+            <h3 class="mt-0.5 text-sm sm:text-base font-semibold text-white">${p.title}</h3>
+          </div>
+          <span class="card-play">${PLAY_ICON}</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Lightbox
+    function openLightbox(p) {
+      document.getElementById("lb-client").textContent = p.client;
+      document.getElementById("lb-title").textContent = p.title;
+      document.getElementById("lb-iframe").src = p.url;
+      document.getElementById("lightbox").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target !== document.getElementById("lightbox")) return;
+      document.getElementById("lb-iframe").src = "";
+      document.getElementById("lightbox").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        document.getElementById("lb-iframe").src = "";
+        document.getElementById("lightbox").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+</body>
+</html>
