@@ -115,17 +115,23 @@
     const PROJECTS = [
       { title: "KLLHATATLANOK",      client: "DIPLOMAFILM",    thumb: "https://drive.google.com/file/d/1dQlA7hKkmgFbrQ44x3EgF78jazGf28D9/view?usp=drive_link", url: "https://youtube.com/embed/YlGhxHNyvow" },
       { title: "KONOK",              client: "PARAFRÁZIS",     thumb: "https://drive.google.com/file/d/1exuk-i6XwLBvnFt3Z5060rmwIRqvrwHJ/view?usp=drive_link", url: "https://youtube.com/embed/zSyP7uzEblU" },
-      { title: "MASQUERADE",         client: "PARAFRÁZIS",     thumb: "https://drive.google.com/file/d/1O2QAGakMx--nfysFAqhI7chhSqLi380T/view?usp=drive_link", url: "https://youtube.com/embed/DP7yiBvzgVQ" },
-      { title: "KÉSZ VAGY?",         client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1FZI3ODdi7PORrEU4jDXF1OOamrysQSF_/view?usp=sharing",    url: "https://youtube.com/embed/NlcxL9DuERc" },
+      { title: "MASQUERADE",         client: "PARAFRÁZIS",     thumb: "https://drive.google.com/file/d/1GImxL_MjPVO5aCxuhFBi4RyVrVUvcHY0/view?usp=drive_link", url: "https://youtube.com/embed/DP7yiBvzgVQ" },
+      { title: "KÉSZ VAGY?",         client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1dE8Kry7nq1FBbWI2M1fU-RwcPCDwyfr8/view?usp=drive_link", url: "https://youtube.com/embed/NlcxL9DuERc" },
       { title: "VACAK",              client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1tsuaAAjoaWADaD_7I8-ZLZHVQWzkkEZa/view?usp=drive_link", url: "https://youtube.com/embed/3CorjAbkflA" },
-      { title: "VÉRFOLT",            client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/15hcXzp2MS96m_fBfDQjROd-pIJJbo6ed/view?usp=sharing",    url: "https://youtube.com/embed/X07NPJVMKPs" },
+      { title: "VÉRFOLT",            client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/15hcXzp2MS96m_fBfDQjROd-pIJJbo6ed/view?usp=drive_link", url: "https://youtube.com/embed/X07NPJVMKPs" },
       { title: "EKKEdd Magazinműsor",client: "MAGAZINMŰSOR",   thumb: "https://drive.google.com/file/d/1shfTe9GCouDuKGmV4BX_JLx-FkeYL3FF/view?usp=drive_link", url: "https://youtube.com/embed/Z5RbFzSeAOY" },
       { title: "KOLLÉGISTÁK",        client: "DOKUMENTUMFILM", thumb: "https://drive.google.com/file/d/1v4P6yjk-B3C92OjXgK7cPXuFgzDvB9y_/view?usp=drive_link", url: "https://youtube.com/embed/1LuJPNSZw4s" },
       { title: "KOLESZOSOK",         client: "DOKUMENTUMFILM", thumb: "https://drive.google.com/file/d/1wWvnsDvLSdvwFIBJnil5l3V4ZZn3hWkQ/view?usp=drive_link", url: "https://youtube.com/embed/MIMLuKDU6Rs" },
       { title: "ÚJRA ITT",           client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1BQVXYPrGsXlMVLoqENCasY5JFE4y6vae/view?usp=drive_link", url: "https://youtube.com/embed/bSnk1kAsLmo" },
       { title: "EMBERI JÁTSZMÁK",    client: "KISJÁTÉKFILM",   thumb: "https://drive.google.com/file/d/1tXop-H0WBVVICFlVlg0i1cBEFuvx3Lu9/view?usp=drive_link", url: "https://youtube.com/embed/g51wklXed-8" },
-      { title: "PORTRÉ",             client: "DOKUMENTUMFILM", thumb: "https://drive.google.com/file/d/13xrQcu6bNeuiQxiJs3mQwSkNeKQMGhZp/view?usp=drive_link", url: "https://youtube.com/embed/Je-03rt-cUA" },
+      { title: "PORTRÉ",             client: "DOKUMENTUMFILM", thumb: "https://drive.google.com/file/d/1sStmx7xAoHaW5SUNJukoDqNI4hNoERLs/view?usp=drive_link", url: "https://youtube.com/embed/Je-03rt-cUA" },
     ];
+
+    function driveThumb(url) {
+      if (!url) return null;
+      const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w800` : url;
+    }
 
     function driveThumb(url) {
       if (!url) return null;
